@@ -9,7 +9,7 @@ function TelegramLogin() {
       setMessage('Verifying Telegram login...');
 
       try {
-        const response = await fetch('http://localhost:5000/api/telegram-auth', {
+        const response = await fetch('https://farming-social-backend.ue.r.appspot.com/api/telegram-auth', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

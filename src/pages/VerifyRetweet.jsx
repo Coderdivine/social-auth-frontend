@@ -9,7 +9,7 @@ function VerifyRetweet() {
   const [user, setUser] = useState({ username: '', id: '' });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const farmingTweetId = '1823683487313928518';
+  const farmingTweetId = '1721920447208411325';
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);

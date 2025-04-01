@@ -26,23 +26,18 @@ function Dashboard() {
             User ID: <span className="font-semibold">{user.id}</span>
           </p>
           <div className="space-y-4">
-            <Link
-              to={`/verify-follow?username=${user.username}&id=${user.id}`}
-              className="bg-green-500 px-6 py-3 rounded-lg text-xl font-semibold hover:bg-green-600 transition block text-center"
-            >
-              Verify Follow
-            </Link>
-            <Link
+          <Link
               to={`/verify-retweet?username=${user.username}&id=${user.id}`}
               className="bg-green-500 px-6 py-3 rounded-lg text-xl font-semibold hover:bg-green-600 transition block text-center"
             >
               Verify Retweet
             </Link>
+
             <Link
-              to={`/verify-smart-follower?username=${user.username}&id=${user.id}`}
+              to={`/verify-likes?username=${user.username}&id=${user.id}`}
               className="bg-green-500 px-6 py-3 rounded-lg text-xl font-semibold hover:bg-green-600 transition block text-center"
             >
-              Verify Smart Follower
+              Verify Likes
             </Link>
           </div>
         </div>

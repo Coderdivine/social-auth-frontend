@@ -6,6 +6,7 @@ import VerifyRetweet from './pages/VerifyRetweet';
 import VerifySmartFollower from './pages/VerifySmartFollower';
 import TelegramLogin from './pages/telegramlogin';
 import GetUserDetails from './pages/GetUserDetails';
+import VerifyLike from './pages/VerifyLikes';
 
 function App() {
   return (
@@ -14,9 +15,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/telegram" element={<TelegramLogin />} />
-        <Route path="/verify-follow" element={<VerifyFollow />} />
         <Route path="/user" element={<GetUserDetails />} />
         <Route path="/verify-retweet" element={<VerifyRetweet />} />
+        <Route path="/verify-likes" element={<VerifyLike />} />
+
+        <Route path="/verify-follow" element={<VerifyFollow />} />
         <Route path="/verify-smart-follower" element={<VerifySmartFollower />} />
       </Routes>
     </BrowserRouter>
