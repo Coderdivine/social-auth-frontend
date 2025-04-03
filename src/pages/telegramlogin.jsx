@@ -22,7 +22,9 @@ function TelegramLogin() {
         if (data.error) {
           setMessage('Authentication failed: ' + data.error);
         } else if (data.joined) {
-          setMessage('Success! You are a member of our Telegram channel.');
+          const userData = data?.authData
+          console.log({ username: userData?.username, id: userData?.id });
+          setMessage(`Success! You are a member of our Telegram channel as ${userData?.username} (${userData?.id}).`);
         } else {
           setMessage('It looks like you have not joined our Telegram channel.');
         }
