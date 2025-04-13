@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
     
@@ -15,6 +16,13 @@ function Home() {
       >
         Sign in with X
       </button>
+
+      <Link
+        to={"/telegram"}
+        className="bg-blue-500 px-6 py-3 rounded-lg text-xl font-semibold hover:bg-blue-600 transition"
+      >
+        Sign in with Telegram
+      </Link>
     </div>
   );
 }
