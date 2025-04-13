@@ -7,6 +7,7 @@ import VerifySmartFollower from './pages/VerifySmartFollower';
 import TelegramLogin from './pages/telegramlogin';
 import GetUserDetails from './pages/GetUserDetails';
 import VerifyLike from './pages/VerifyLikes';
+import './App.css';
 
 function App() {
   return (

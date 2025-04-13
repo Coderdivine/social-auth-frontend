@@ -9,7 +9,8 @@ function TelegramLogin() {
       setMessage('Verifying Telegram login...');
 
       try {
-        const response = await fetch('https://farming-social-backend.ue.r.appspot.com/api/telegram-auth', {
+        const url = "http://localhost:5000/api/telegram-auth" || "https://farming-social-backend.ue.r.appspot.com/api/telegram-auth";
+        const response = await fetch(url, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -22,14 +23,15 @@ function TelegramLogin() {
         if (data.error) {
           setMessage('Authentication failed: ' + data.error);
         } else if (data.joined) {
-          const userData = data?.authData
+          console.log({ joined: data.userData });
+          const userData = data?.userData
           console.log({ username: userData?.username, id: userData?.id });
           setMessage(`Success! You are a member of our Telegram channel as ${userData?.username} (${userData?.id}).`);
         } else {
           setMessage('It looks like you have not joined our Telegram channel.');
         }
       } catch (error) {
-        setMessage('Error verifying your Telegram login.');
+        setMessage('Error verif ying your Telegram login.');
       }
     };
 
@@ -45,14 +47,14 @@ function TelegramLogin() {
   }, []);
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Join Our Telegram Channel</h1>
-      <p>
-        To get rewarded, please follow our Telegram channel and verify your membership using Telegram login.
-      </p>
-      <div id="telegram-login-container"></div>
-      {message && <p style={{ marginTop: '1rem' }}>{message}</p>}
-    </div>
+    <div className="telegram-card">
+    <h1 className="telegram-title">Join Our Telegram Channel</h1>
+    <p className="telegram-description">
+      To get rewarded, please follow our Telegram channel and verify your membership using Telegram login.
+    </p>
+    <div id="telegram-login-container"></div>
+    {message && <p className="telegram-message">{message}</p>}
+  </div>
   );
 }
 
